@@ -319,3 +319,7 @@ ul.guessBox li {
 	margin: 0.2em;
 	color: #fff;
 }
+#feedbackExact, #feedbackHot, #feedbackCold {
+	display: none;
+}
+
