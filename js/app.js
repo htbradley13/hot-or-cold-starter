@@ -41,6 +41,8 @@ $(document).ready(function(){
       $("#feedbackExact").hide();
       $("#feedbackHot").hide();
       $("#feedbackCold").hide();
+      //Show original message
+      $("#feedback").show();
   	}
 
   	/* Declaring randomNumber function */
@@ -49,6 +51,18 @@ $(document).ready(function(){
   		max = Math.floor(max);
   		return Math.floor(Math.random() * (max - min + 1)) + min;
   	}
+
+    /* Setting user count total variable, convert to number from string as well */
+    var userGuessCountTotal = +($("#count").val());
+
+    /* Declaring guessCount running total function */
+    function guessCountTally (x) {
+          var newTally = x + 1;
+          $("#count").html("<span>" + newTally + "</span");
+    }
+    
+
+
 
   	/* Feedback function on submit*/
   	$("#guessButton").submit(function(event){
@@ -61,7 +75,10 @@ $(document).ready(function(){
         alert("Please enter a number between 1-100");
       }
       else {
+        /* Invoke user guess tally function and hide current feedback showing*/
+        guessCountTally(userGuessCountTotal);
         $("#feedback").hide();
+        /* Then show feedback based on the below */
         if (((userNumEntry - randomNumberSelected).abs()) = 0) {
           $("#feedbackExact").show();
         }
