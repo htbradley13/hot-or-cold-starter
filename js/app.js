@@ -30,7 +30,7 @@ $(document).ready(function(){
   	/* Declaring newGame function */
   	function newGame (){
   		//Resets the guess entry input
-  		$("form").reset();
+  		$("form")[0].reset();
   		//Resets guess counter
   		$("#count").val("0");
   		//Removes list of guessed numbers
