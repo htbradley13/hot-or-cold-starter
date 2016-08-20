@@ -54,7 +54,7 @@ $(document).ready(function(){
     //Invoke newGame function
     newGame();
 
-    /* Call/invoke newGame function on button click */
+    /* Call/invoke newGame function on button click  */
     $(".new").mousedown(function() {
       newGame();
     });
